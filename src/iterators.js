@@ -5,6 +5,9 @@ var Iterators = {
   // - tripler([7,50,4]) should return [21,150,12].
   // Use `map` to accomplish this.
   tripler: function (numbers) {
+    return numbers.map(function (num) {
+      return num * 3;
+    });
   },
 
   // perfectSquares() should take an array of numbers as a parameter
@@ -16,6 +19,9 @@ var Iterators = {
   // - perfectSquares([1,4,9]) should return [1,4,9].
   // Use `filter` to accomplish this.
   perfectSquares: function (numbers) {
+    return  numbers.filter(function (num) {
+      return ((Math.sqrt(num) % 1) === 0);  
+    });
   },
 
   // product() should accept an array of numbers as a parameter
@@ -26,6 +32,9 @@ var Iterators = {
   // - product([100,200,300]) should return 6000000.
   // Use `reduce` to accomplish this.
   product: function (numbers) {
+    return numbers.reduce(function (x, y) {
+      return x * y;
+    });
   },
 
   // hasInstructor() accepts an array of names and should return true
@@ -39,6 +48,9 @@ var Iterators = {
   // Use `some` to accomplish this.
   // Hint: see `toLowerCase`, it could be useful.
   hasInstructor: function (names) {
+    return names.some(function (name) {
+      return ((name.toLowerCase() === "tim") || (name.toLowerCase() === "alex") || (name.toLowerCase() === "elie"));
+    });
   },
 
   // allSamePlayer() should accept an array of players, represented by
@@ -53,6 +65,16 @@ var Iterators = {
   // - allSamePlayer(["_","_","_"]) should return false.
   // Use `every` to accomplish this.
   allSamePlayer: function (players) {
+    return players.every(function (z) {
+      if (z.toLowerCase() === "x") {
+        return true;
+      }
+      else if (z.toLowerCase() === "o") {
+        return true;
+      }
+      else return false;
+    });
+
   },
 
   // Also not an iterator metheod, necessarily. devowel() takes a
@@ -68,6 +90,10 @@ var Iterators = {
   // - devowel("Howdy") should return "Hwdy",
   // - devowel("Phone's ringing, dude.") should return "Phn's rngng, dd.".
   devowel: function (text) {
+    return text.split.filter(function (i) {
+      var noVowel = (i !== ("a" || "e" || "i" || "o" || "u"));
+      return noVowel.join;
+    });
   }
 };
 
